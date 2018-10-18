@@ -1,6 +1,6 @@
 # interest-group
 
-> intere group meet up application
+> interest group platform application
 
 ## Build Setup
 

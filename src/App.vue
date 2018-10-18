@@ -42,15 +42,28 @@
 export default {
   data () {
     return {
-      sideNav: false,
-      menuItems: [
-        { icon: 'home', title: 'Home Page', link: '/' },
-        { icon: 'supervisor_account', title: 'View Interest Group', link: '/meetups' },
-        { icon: 'room', title: 'Organize Interest Group', link: '/meetups/new' },
-        { icon: 'person', title: 'Profile', link: '/profile' },
+      sideNav: false
+    }
+  },
+  computed: {
+    menuItems() {
+      let menuItems = [
+        // { icon: 'home', title: 'Home Page', link: '/' },
+
         { icon: 'face', title: 'Sign up', link: '/signup' },
         { icon: 'lock_open', title: 'Sign in', link: '/signin' }
       ]
+      if (this.userIsAuthenticated) {
+        menuItems = [
+          { icon: 'supervisor_account', title: 'View Interest Group', link: '/meetups' },
+          { icon: 'room', title: 'Organize Interest Group', link: '/meetups/new' },
+          { icon: 'person', title: 'Profile', link: '/profile' },
+        ]
+      }
+      return menuItems
+    },
+    userIsAuthenticated() {
+      return this.$store.getters.user !== null && this.$store.getters.user !== undefined
     }
   },
   name: 'App'
