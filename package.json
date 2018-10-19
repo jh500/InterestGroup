@@ -1,8 +1,8 @@
 {
   "name": "interest-group",
   "version": "1.0.0",
-  "description": "intere group meet up application",
-  "author": "IS5003 gorup ACE",
+  "description": "interest group platform application",
+  "author": "IS5003 group ACE",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
